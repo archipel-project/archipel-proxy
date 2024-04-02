@@ -1,1 +1,4 @@
 /target
+
+# Executable files
+proxy.toml

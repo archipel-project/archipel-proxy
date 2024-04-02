@@ -15,3 +15,6 @@ tracing-subscriber = { version = "0.3", features = [
     "time",
     "env-filter",
 ] }
+serde = { version = "1", features = ["derive"] }
+toml = "0"
+validator = { version = "0", features = ["derive"] }
