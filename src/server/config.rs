@@ -62,6 +62,15 @@ impl Default for ServersConfig {
     }
 }
 
+impl Iterator for ServersConfig {
+    type Item = (String, String);
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let (name, address) = self.servers.iter().next()?;
+        Some((name.clone(), address.clone()))
+    }
+}
+
 impl Config {
     pub async fn load(path: impl AsRef<Path>) -> anyhow::Result<Self> {
         let mut config = Config::default();

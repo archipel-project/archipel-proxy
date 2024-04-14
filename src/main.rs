@@ -9,7 +9,7 @@ mod server;
 async fn main() {
     bootstrap::init().expect("Failed to initialize the logger");
 
-    let server = server::ProxyServer::new();
+    let mut server = server::ProxyServer::new();
 
     match server.start().await {
         Ok(_) => {}
